@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { LocalStorageService } from 'angular-2-local-storage';
 import { Router } from '@angular/router';
 
 import { User } from '../shared/models/user';
