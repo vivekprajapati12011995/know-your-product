@@ -1,4 +1,6 @@
 export class User {
-  public userName: string;
+  public fname: string;
+  public lname: string;
+  public email: string;
   public password: string;
 }

@@ -20,7 +20,6 @@ export class SignupComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.newUser);
-    localStorage.setItem(this.newUser.userName,JSON.stringify(this.newUser.password));
   ///the event that user is created
     this.userCreated.emit({ user: this.newUser });
     this.newUser = new User();

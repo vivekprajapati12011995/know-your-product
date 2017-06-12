@@ -20,18 +20,13 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.newUser);
-    var password = localStorage.getItem(this.newUser.userName);
-    console.log("password1: " + password);
     console.log("password2: " + this.newUser.password);
 
 
-    if (password == JSON.stringify(this.newUser.password)) {
       console.log("user logged  in successfully");
       this.router.navigate(['/']);
-    } else {
       console.log("user not found");
       this.router.navigate(['/login']);
-    }
     ///the event that user is created
     this.userLogged.emit({ user: this.newUser });
     this.newUser = new User();
