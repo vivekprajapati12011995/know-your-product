@@ -1,22 +1,17 @@
 <header>
-      <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a routerLink="/" class="navbar-brand"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-cart-arrow-down " aria-hidden="true"></i> Cart.com</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><a routerLink="/"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-          <li><a routerLink="/login"  routerLinkActive="active">Login</a></li>
-          <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
-        </ul>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a routerLink="/" class="navbar-brand" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-shopping-bag" aria-hidden="true"></i> ShoppingMart.com</a>
       </div>
-      </nav>
-    </header>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-
-{{users}}
-<!-- <app-login></app-login> -->
-<!-- <app-signup (userCreated)="onUserCreated($event)"></app-signup> -->
-<!-- <app-home [user]="activeUser"></app-home> -->
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
