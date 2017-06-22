@@ -20,19 +20,15 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.newUser);
-    console.log("password2: " + this.newUser.password);
-
-
-      console.log("user logged  in successfully");
-      this.router.navigate(['/']);
-      console.log("user not found");
-      this.router.navigate(['/login']);
+    console.log("user logged  in successfully");
+    this.router.navigate(['/']);
+    console.log("user not found");
+    this.router.navigate(['/login']);
     ///the event that user is created
     this.userLogged.emit({ user: this.newUser });
     this.newUser = new User();
     this.active = false;
     setTimeout(() => this.active = true, 0);
-
   }
 
 }

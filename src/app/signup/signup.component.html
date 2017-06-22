@@ -5,19 +5,19 @@
       <h1><i class="fa fa-user" aria-hidden="true"></i> Create an account</h1>
     </div>
   	<div class="form-group" [ngClass]="{'has-error':fname.invalid && fname.touched}">
-  		<label for="email_id" class="control-label">FirstName</label>
-  		<input type="text" class="form-control" id="fname" name="fname" placeholder="FirstName" required="" [(ngModel)]="newUser.fname" #fname="ngModel">
+  		<label for="firstname" class="control-label">FirstName</label>
+  		<input type="text" class="form-control" id="fname" name="fname" placeholder="FirstName" required="" [(ngModel)]="newUser.firstname" #fname="ngModel">
       <span class="help-block" *ngIf="fname.invalid && fname.touched">* FirstName is required</span>
   	</div>
 		<div class="form-group" [ngClass]="{'has-error':lname.invalid && lname.touched}">
-  		<label for="email_id" class="control-label">LastName</label>
-  		<input type="text" class="form-control" id="lname" name="lname" placeholder="LastName" required="" [(ngModel)]="newUser.lname" #lname="ngModel">
+  		<label for="lname" class="control-label">LastName</label>
+  		<input type="text" class="form-control" id="lname" name="lname" placeholder="LastName" required="" [(ngModel)]="newUser.lastname" #lname="ngModel">
       <span class="help-block" *ngIf="lname.invalid && lname.touched">* LastName is required</span>
   	</div>
-    <div class="form-group"  [ngClass]="{'has-error':email.invalid && email.touched}"> <!-- email field !-->
-  		<label for="email" class="control-label">Email</label>
-  		<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" [(ngModel)]="newUser.email" #email="ngModel">
-      <span class="help-block" *ngIf="email.invalid && email.touched">* Email is required</span>
+    <div class="form-group"  [ngClass]="{'has-error':username.invalid && username.touched}"> <!-- email field !-->
+  		<label for="username" class="control-label">Username</label>
+  		<input type="text" class="form-control" id="username" name="username" placeholder="Username" required="" [(ngModel)]="newUser.username" #username="ngModel">
+      <span class="help-block" *ngIf="username.invalid && username.touched">* Username is required</span>
   	</div>
 		<div class="form-group"  [ngClass]="{'has-error':password.invalid && password.touched}"> <!-- password field !-->
   		<label for="password" class="control-label">Password</label>

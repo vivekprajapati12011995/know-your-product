@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from '../shared/models/user';
+import { UserService } from '../shared/services/user.service';
 
 
 @Component({
@@ -13,17 +14,17 @@ export class SignupComponent implements OnInit {
   @Output() userCreated = new EventEmitter();
   newUser: User = new User();
   active: boolean = true;
-  constructor(private router: Router) {}
+  constructor(private router: Router,private service: UserService) {}
 
   ngOnInit() {
 
   }
+
   onSubmit(){
     console.log(this.newUser);
-  ///the event that user is created
-    this.userCreated.emit({ user: this.newUser });
-    this.newUser = new User();
-    this.active = false;
+    this.service.createUser(this.newUser).subscribe();
+    // this.newUser = new User();
+    // this.active = false;
     setTimeout(() => this.active = true , 0);
     this.router.navigate(['/login']);
   }
