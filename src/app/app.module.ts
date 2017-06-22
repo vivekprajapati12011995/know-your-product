@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductAboutComponent } from './product-about/product-about.component';
 import { ProductService } from './shared/services/product.service'
+import { UserService } from './shared/services/user.service'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import { ProductService } from './shared/services/product.service'
     appRouting,
     Ng2PaginationModule
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    UserService
+    ],
 
   bootstrap: [AppComponent]
 })

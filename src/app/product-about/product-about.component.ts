@@ -16,8 +16,8 @@ product: Product;
 constructor(private route: ActivatedRoute, private service: ProductService ) { }
 
 ngOnInit() {
-let id = this.route.snapshot.params['p_id'];
-this.service.getProduct(id).then(product => this.product = product)
+let id = this.route.snapshot.params['_id'];
+ this.service.getProduct(id).subscribe(product => this.product = product)
 
 }
 
