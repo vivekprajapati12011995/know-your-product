@@ -8,27 +8,30 @@ import { User } from '../models/user';
 @Injectable()
 export class UserService {
 
+  private baseURL:string = 'http://localhost:3000/api/users'
   constructor (
     private http: Http
   ) {}
 
 //get all users
   getUsers() {
-    return this.http.get('http://localhost:3000/api/users').map((res:Response) => res.json());
+    return this.http.get(this.baseURL).map((res:Response) => res.json());
   }
 
   //get user by id
   getUser(id) {
-    return this.http.get('http://localhost:3000/api/users/'+id).map((res:Response) => res.json());
+    return this.http.get(this.baseURL+id).map((res:Response) => res.json());
   }
 
   createUser(user){
     console.log(JSON.stringify(user));
-    return this.http.post('http://localhost:3000/api/users/',JSON.stringify(user)).map((res:Response) => res.json());
+    return this.http.post(this.baseURL,JSON.stringify(user)).map(function(res:Response){
+       res.json();
+    });
   }
 
   login(user){
-    return this.http.post('http://localhost:3000/api/login/',JSON.stringify(user)).map((res:Response) => res.json());
+    return this.http.post('http://localhost:3000/api/login/',user).map((res:Response) => res.json());
   }
 
 }

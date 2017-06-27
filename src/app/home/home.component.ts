@@ -15,7 +15,11 @@ export class HomeComponent implements OnInit {
   constructor(private service: ProductService) { }
 
   ngOnInit() {
-    this.service.getProducts().subscribe(products => this.products = products)
+    this.service.getProducts().subscribe(res => this.products = res.data, err => this.printError(err),() => console.log("success"));
+  }
+
+  printError(err){
+    console.log("something went wrong!!!")
   }
 
 }

@@ -15,5 +15,7 @@
 </header>
 </div>
 <main>
-  <router-outlet></router-outlet>
+  <router-outlet>
+     <span *ngIf="showLoader" class="loading"></span>
+  </router-outlet>
 </main>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 
 import { User } from '../shared/models/user';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,16 +15,15 @@ export class LoginComponent implements OnInit {
   newUser: User = new User();
   active: boolean = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service : UserService) { }
 
   ngOnInit() {
   }
+
   onSubmit() {
     console.log(this.newUser);
-    console.log("user logged  in successfully");
+    this.service.login(JSON.stringify(this.newUser)).subscribe();
     this.router.navigate(['/']);
-    console.log("user not found");
-    this.router.navigate(['/login']);
     ///the event that user is created
     this.userLogged.emit({ user: this.newUser });
     this.newUser = new User();
