@@ -9,8 +9,8 @@ import { ProductAboutComponent } from './product-about/product-about.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'about/:_id', component: ProductAboutComponent },
   { path: '**', component: NotFoundComponent }

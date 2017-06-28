@@ -15,5 +15,9 @@ export class AppComponent {
 
     ngOnInit() {
     }
+    
+    onUserLogged(event) {
+        console.log("user: "+event.user);
+    }
 
 }

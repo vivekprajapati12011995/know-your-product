@@ -19,13 +19,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
   onSubmit() {
-    console.log(this.newUser);
     this.service.login(JSON.stringify(this.newUser)).subscribe();
+    this.userLogged.emit({ user: this.newUser.firstname });
     this.router.navigate(['/']);
     ///the event that user is created
-    this.userLogged.emit({ user: this.newUser });
     this.newUser = new User();
     this.active = false;
     setTimeout(() => this.active = true, 0);
