@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.service.login(JSON.stringify(this.newUser)).subscribe();
     this.userLogged.emit({ user: this.newUser.firstname });
     this.router.navigate(['/']);
-    ///the event that user is created
+    ///the event that user is gicreated
     this.newUser = new User();
     this.active = false;
     setTimeout(() => this.active = true, 0);
