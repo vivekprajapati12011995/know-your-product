@@ -25,13 +25,13 @@ export class UserService {
 
   createUser(user){
     console.log(JSON.stringify(user));
-    return this.http.post(this.baseURL,user).map(function(res:Response){
+    return this.http.post("http://localhost:3000/api/user/register",user).map(function(res:Response){
        res.json();
     });
   }
 
   login(user){
-    return this.http.post('http://localhost:3000/api/users/login/',user).map((res:Response) => res.json());
+    return this.http.post('http://localhost:3000/api/user/login/',user).map((res:Response) => res.json());
   }
 
 }

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   
 
   onSubmit() {
-    this.service.login(JSON.stringify(this.newUser)).subscribe();
+    this.service.login(this.newUser).subscribe();
     this.userLogged.emit({ user: this.newUser.firstname });
     this.router.navigate(['/']);
     ///the event that user is gicreated
