@@ -16,6 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductAboutComponent } from './product-about/product-about.component';
 import { ProductService } from './shared/services/product.service'
 import { UserService } from './shared/services/user.service';
+import { AuthenticationService } from './shared/services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UserService } from './shared/services/user.service';
   ],
   providers: [
     ProductService,
-    UserService
+    UserService,
+    AuthenticationService
   ],
 
   bootstrap: [AppComponent]

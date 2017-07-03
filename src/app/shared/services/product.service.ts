@@ -10,7 +10,7 @@ import { Product } from '../models/product';
 @Injectable()
 export class ProductService {
 
-  private baseURL:string = 'http://localhost:3000/api/products'
+  private baseURL:string = 'http://localhost:3000/api/product'
 
   constructor (
     private http: Http

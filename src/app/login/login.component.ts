@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 
 import { User } from '../shared/models/user';
-import { UserService } from '../shared/services/user.service';
+import { AuthenticationService } from '../shared/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   newUser: User = new User();
   active: boolean = true;
 
-  constructor(private router: Router, private service : UserService) { }
+  constructor(private router: Router, private service : AuthenticationService) { }
 
   ngOnInit() {
   }
@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.service.login(this.newUser).subscribe();
-    this.userLogged.emit({ user: this.newUser.firstname });
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
     ///the event that user is gicreated
     this.newUser = new User();
     this.active = false;

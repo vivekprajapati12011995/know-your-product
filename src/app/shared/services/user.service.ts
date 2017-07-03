@@ -24,7 +24,6 @@ export class UserService {
   }
 
   createUser(user){
-    console.log(JSON.stringify(user));
     return this.http.post("http://localhost:3000/api/user/register",user).map(function(res:Response){
        res.json();
     });
